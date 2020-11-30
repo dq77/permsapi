@@ -5,7 +5,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var User = require('../models/User');
+var User = require('../models/user');
 
 /* GET 带参数请求 */
 router.get('/userlist', function(req, res, next) {
