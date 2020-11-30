@@ -3,7 +3,7 @@
  * @Date: 2020-11-24 14:38:28
  * @LastEditors: わからないよう
  */
-var db = require('../database/mysql');
+var db = require('../dataBase/mysql');
 var User = {};
 
 // 获取用户信息
