@@ -4,7 +4,8 @@
  * @LastEditors: わからないよう
  */
 var db = require('../dataBase/mysql');
-const moment = require('moment')
+const moment = require('moment-timezone');
+moment.tz.setDefault("Asia/Shanghai");
 var User = {};
 
 // 获取用户信息
