@@ -26,26 +26,24 @@ router.post('/getartinfo', function(req, res, next) {
 router.post('/saveart', function(req, res, next) {
   User.find(req.body.artid, function(err, result){
     let resp = {}
-    if(err){
-      User.addArtInfo(req.body.artid, req.body.val, function(err, result1){
+    if(result[0] && result[0].id){
+      // 编辑保存 先存历史记录
+      User.saveOld(req.body.artid, result[0].val, function(err, result){});
+      User.setArtInfo(req.body.artid, req.body.val, function(err, result1){
         if(err){
           res.send('not found');
         }
-        resp = result1
+        res.send(result1);
       });
     } else {
-      User.setArtInfo(req.body.artid, req.body.val, function(err, result2){
+      // 新增保存
+      User.addArtInfo(req.body.artid, req.body.val, function(err, result2){
         if(err){
           res.send('not found');
         }
-        resp = result2
+        res.send(result2);
       });
     }
-    if (result[0] && result[0].id) {
-      User.saveOld(req.body.artid, result[0].val, function(err, result){
-      });
-    }
-    res.send(resp);
   });
 });
 
