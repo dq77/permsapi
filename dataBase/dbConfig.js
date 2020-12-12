@@ -12,7 +12,7 @@ let mysql = {
   // user:"readonly", // 生产环境
 
   port: "3306",
-  password:"123456",
+  password:"ddqq19956-",
   database:"perms"
 }
 module.exports = mysql;
