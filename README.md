@@ -1,13 +1,8 @@
-<!--
- * @Author: 刁琪
- * @Date: 2020-11-30 16:10:48
- * @LastEditors: 掉漆
--->
 # permsapi
 - 个人笔记node端代码
 - 存放位置：etc/nodefront/permsapi
-- Linux先安装MySql并配置好远程连接
-- forever运行./bin/www即可
+- Linux先安装MySql并配置好远程连接，IP地址和密码在服务器上改好(dataBase/dbConfig文件)
+- pm2 start ./bin/www 即可
 - 如跨域，反向代理配置：
 ```
 location /picert {
